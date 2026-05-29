@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jaya Iyer — Performance Coaching</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --teal:#1F4E5F;--teal-mid:#2E7D8C;--teal-pale:#EBF5F8;
+  --gold:#9A7B3A;--cream:#FAFAF7;--off:#F3F1EC;
+  --ink:#1A1A18;--ink-mid:#44443F;--ink-light:#87877F;
+  --rule:rgba(31,78,95,0.12);
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth;}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 6vw;height:60px;background:rgba(250,250,247,0.93);backdrop-filter:blur(12px);border-bottom:0.5px solid var(--rule);}
+.nav-name{font-family:var(--serif);font-size:19px;font-weight:400;color:var(--teal);text-decoration:none;}
+.nav-email{font-size:12px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;color:var(--cream);background:var(--teal);padding:9px 22px;transition:background 0.2s;}
+.nav-email:hover{background:var(--teal-mid);}
+
+/* HERO */
+.hero{min-height:100vh;padding-top:60px;display:grid;grid-template-columns:1.1fr 0.9fr;}
+.hero-l{background:var(--teal);display:flex;flex-direction:column;justify-content:center;padding:9vw 5vw 9vw 9vw;position:relative;overflow:hidden;}
+.hero-l::before{content:'';position:absolute;bottom:-100px;right:-60px;width:320px;height:320px;border-radius:50%;border:1px solid rgba(255,255,255,0.05);pointer-events:none;}
+.tag{font-size:10px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:rgba(168,216,224,0.65);margin-bottom:2.2rem;animation:up 0.6s ease both;animation-delay:0.1s;}
+.hero-h{font-family:var(--serif);font-size:clamp(36px,4.2vw,62px);font-weight:300;line-height:1.1;color:#fff;margin-bottom:2rem;animation:up 0.6s ease both;animation-delay:0.22s;}
+.hero-h em{font-style:italic;color:rgba(168,216,224,0.9);}
+.hero-sub{font-size:15px;font-weight:300;line-height:1.9;color:rgba(255,255,255,0.55);max-width:380px;margin-bottom:2.8rem;animation:up 0.6s ease both;animation-delay:0.36s;}
+.hero-btn{display:inline-block;font-size:12px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal);background:rgba(168,216,224,0.88);padding:13px 30px;text-decoration:none;align-self:flex-start;transition:background 0.2s;animation:up 0.6s ease both;animation-delay:0.5s;}
+.hero-btn:hover{background:#fff;}
+.hero-r{background:var(--off);display:flex;flex-direction:column;justify-content:center;padding:9vw 9vw 9vw 5vw;animation:up 0.7s ease both;animation-delay:0.28s;}
+.pull{font-family:var(--serif);font-size:clamp(17px,1.9vw,24px);font-weight:400;font-style:italic;line-height:1.6;color:var(--teal);border-left:2px solid var(--gold);padding-left:1.6rem;margin-bottom:2rem;}
+.hero-body{font-size:15px;font-weight:300;line-height:1.95;color:var(--ink-mid);}
+.hero-body p+p{margin-top:1.1rem;}
+
+/* WHAT */
+.what{background:var(--cream);padding:7rem 9vw;display:grid;grid-template-columns:1fr 1fr;gap:5vw;align-items:start;}
+.eyebrow{font-size:10px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:var(--teal-mid);margin-bottom:1.2rem;}
+.sh{font-family:var(--serif);font-size:clamp(28px,3.2vw,44px);font-weight:400;line-height:1.18;color:var(--teal);margin-bottom:1.5rem;}
+.what-body{font-size:15px;font-weight:300;line-height:1.95;color:var(--ink-mid);}
+.what-body p+p{margin-top:1.1rem;}
+.what-quote{font-family:var(--serif);font-size:clamp(19px,2vw,26px);font-weight:400;font-style:italic;line-height:1.55;color:var(--teal);padding:1.6rem 2rem;background:var(--teal-pale);border-left:2px solid var(--teal-mid);margin-bottom:1.8rem;}
+.what-list{list-style:none;}
+.what-list li{font-size:14px;font-weight:300;line-height:1.85;color:var(--ink-mid);padding:0.65rem 0;border-bottom:0.5px solid var(--rule);display:flex;gap:0.8rem;}
+.what-list li::before{content:'—';color:var(--teal-mid);flex-shrink:0;}
+
+/* ABOUT */
+.about{background:var(--teal);padding:7rem 9vw;display:grid;grid-template-columns:1fr 1.5fr;gap:5vw;align-items:start;}
+.about-name{font-family:var(--serif);font-size:36px;font-weight:400;color:#fff;margin-bottom:0.3rem;}
+.about-role{font-size:11px;font-weight:400;letter-spacing:0.14em;text-transform:uppercase;color:rgba(168,216,224,0.65);margin-bottom:1.5rem;}
+.about-divider{width:36px;height:1px;background:var(--gold);margin-bottom:1.8rem;}
+.about-creds{list-style:none;}
+.about-creds li{font-size:13px;font-weight:300;line-height:1.8;color:rgba(255,255,255,0.55);padding:0.45rem 0;border-bottom:0.5px solid rgba(255,255,255,0.08);display:flex;gap:0.7rem;}
+.about-creds li::before{content:'—';color:rgba(168,216,224,0.5);flex-shrink:0;}
+.about-body p{font-size:16px;font-weight:300;line-height:1.95;color:rgba(255,255,255,0.65);margin-bottom:1.3rem;}
+.about-body p:last-child{margin-bottom:0;}
+.about-body strong{font-weight:400;color:rgba(255,255,255,0.9);}
+
+/* CTA */
+.cta{background:var(--off);padding:7rem 9vw;display:grid;grid-template-columns:1fr auto;gap:4rem;align-items:center;}
+.cta-h{font-family:var(--serif);font-size:clamp(26px,3.2vw,46px);font-weight:300;line-height:1.2;color:var(--teal);}
+.cta-h em{font-style:italic;}
+.cta-sub{font-size:14px;font-weight:300;color:var(--ink-light);margin-top:0.9rem;line-height:1.8;}
+.cta-btn{display:inline-block;font-size:12px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--cream);background:var(--teal);padding:16px 36px;text-decoration:none;white-space:nowrap;transition:background 0.2s;}
+.cta-btn:hover{background:var(--teal-mid);}
+
+/* FOOTER */
+footer{background:#111;padding:2rem 9vw;display:flex;align-items:center;justify-content:space-between;}
+.f-name{font-family:var(--serif);font-size:16px;font-weight:400;color:rgba(255,255,255,0.28);}
+.f-note{font-size:11px;color:rgba(255,255,255,0.16);letter-spacing:0.05em;}
+
+/* SCROLL REVEAL */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.65s ease,transform 0.65s ease;}
+.reveal.in{opacity:1;transform:none;}
+
+@keyframes up{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+
+/* FORM */
+.cta{background:var(--off);padding:7rem 9vw;display:grid;grid-template-columns:1fr 1.4fr;gap:5vw;align-items:start;}
+.cta-form{display:flex;flex-direction:column;gap:1rem;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.form-input{font-family:var(--sans);font-size:14px;font-weight:300;color:var(--ink);background:#fff;border:0.5px solid var(--rule);border-bottom:1.5px solid var(--teal-mid);padding:12px 14px;width:100%;outline:none;transition:border-color 0.2s;}
+.form-input:focus{border-bottom-color:var(--teal);}
+.form-input::placeholder{color:var(--ink-light);}
+.form-textarea{min-height:120px;resize:vertical;}
+.form-btn{font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--cream);background:var(--teal);border:none;padding:14px 28px;cursor:pointer;align-self:flex-start;transition:background 0.2s;}
+.form-btn:hover{background:var(--teal-mid);}
+.form-note{font-size:12px;font-weight:300;color:var(--ink-light);margin-top:0.2rem;}
+
+/* RESPONSIVE */
+@media(max-width:800px){
+  .hero{grid-template-columns:1fr;min-height:auto;}
+  .hero-l{padding:5rem 7vw 3.5rem;}
+  .hero-r{padding:3.5rem 7vw 5rem;}
+  .what{grid-template-columns:1fr;gap:3rem;padding:5rem 7vw;}
+  .about{grid-template-columns:1fr;gap:2.5rem;padding:5rem 7vw;}
+  .cta{grid-template-columns:1fr;gap:2.5rem;padding:5rem 7vw;}
+  .form-row{grid-template-columns:1fr;}
+  footer{flex-direction:column;gap:0.7rem;text-align:center;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-name" href="#">Jaya Iyer</a>
+  <a class="nav-email" href="#contact">Get in Touch</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-l">
+    <p class="tag">Performance Coaching</p>
+    <h1 class="hero-h">
+      You've mastered<br>
+      your professional game.<br>
+      <em>Nobody coaches men<br>
+      on the rest.</em>
+    </h1>
+    <p class="hero-sub">
+      You provide. You show up. You've built something real.
+      And you come home and feel like a ghost in your own house.
+    </p>
+    <a class="hero-btn" href="#what">Keep reading</a>
+  </div>
+  <div class="hero-r">
+    <p class="pull">
+      "I'm doing everything right.
+      I don't understand why
+      nothing's changing."
+    </p>
+    <div class="hero-body">
+      <p>Most high-performing men have been coached on how to do better at work. Nobody coaches them on the part of life where everything else either holds together or falls apart.</p>
+      <p>That gap — between who you are at work and who you are at home — is where I work.</p>
+    </div>
+  </div>
+</div>
+
+<section class="what reveal" id="what">
+  <div>
+    <p class="eyebrow">What this is</p>
+    <h2 class="sh">The inner work that drives outer results.</h2>
+    <div class="what-body">
+      <p>You've tried the obvious things. The gifts, the trips, asking about her day. Giving more space. Taking on more at home. Reading the book that was supposed to help.</p>
+      <p>You understood the problem. You went home. Nothing changed.</p>
+      <p>The pattern that drives change lives in the unconscious. I work to bring that to light — so the change you’ve been trying to make actually sticks.</p>
+      <p>When we reach that level, everything else goes further.</p>
+    </div>
+  </div>
+  <div>
+    <p style="font-size:14px;font-weight:300;line-height:1.85;color:var(--ink-mid);margin-bottom:1.4rem;">Here's what becomes possible:</p>
+    <blockquote class="what-quote">
+      "I didn't know I was allowed to need things."
+    </blockquote>
+    <ul class="what-list">
+      <li>She looks at you differently — with respect, not management.</li>
+      <li>You laugh with your kids. Actually laugh — not perform it.</li>
+      <li>The anger that used to come out sideways has somewhere to go.</li>
+      <li>You stop repeating the same pattern. In this relationship or the next.</li>
+      <li>Clearer thinking and sharper focus at work — a consistent secondary gain.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="about reveal" id="about">
+  <div>
+    <h2 class="about-name">Jaya Iyer</h2>
+    <p class="about-role">Performance Coach</p>
+    <div class="about-divider"></div>
+    <ul class="about-creds">
+      <li>Trained in Jungian-informed depth methodology</li>
+      <li>Emotional Power Integration practitioner</li>
+      <li>Senior leader at Amazon</li>
+      <li>Works alongside therapy — not as a replacement</li>
+    </ul>
+  </div>
+  <div class="about-body">
+    <p>I'm a senior leader at Amazon. I've raised two kids. I know what it is to perform at a high level across every domain simultaneously — and I know the specific exhaustion of being excellent at work and stuck everywhere else.</p>
+    <p>That's what led me to this work. The inner work that produces lasting change isn't a soft add-on to high performance. It's the missing variable that determines whether everything you've built actually feels like yours.</p>
+    <p><strong>I work with high-performing men who are excellent at their careers and ready to bring that same focus to their relationships.</strong></p>
+    <p>If something on this page stopped you, send me an email. I'll write back personally.</p>
+  </div>
+</section>
+
+<div class="cta reveal" id="contact">
+  <div class="cta-left">
+    <h2 class="cta-h">
+      Ready to close<br>
+      <em>that gap?</em>
+    </h2>
+    <p class="cta-sub">
+      Tell me a little about where you are.<br>
+      I'll write back personally.
+    </p>
+  </div>
+  <form class="cta-form" action="https://formspree.io/f/jayuiyer@gmail.com" method="POST">
+    <input type="hidden" name="_subject" value="New enquiry from jayaiyer.com">
+    <input type="hidden" name="_replyto" id="reply-to">
+    <div class="form-row">
+      <input class="form-input" type="text" name="name" placeholder="Your name" required>
+      <input class="form-input" type="email" name="email" placeholder="Your email" required oninput="document.getElementById('reply-to').value=this.value">
+    </div>
+    <textarea class="form-input form-textarea" name="message" placeholder="Where are you right now? What are you trying to figure out?" required></textarea>
+    <button class="form-btn" type="submit">Send Message</button>
+    <p class="form-note">No sales pitch. No intake process. Just a real reply.</p>
+  </form>
+</div>
+
+<footer>
+  <span class="f-name">Jaya Iyer</span>
+  <span class="f-note">Performance Coaching</span>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(
+  entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); }),
+  { threshold: 0.1 }
+);
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>
