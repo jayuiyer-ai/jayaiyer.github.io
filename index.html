@@ -53,7 +53,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .what-list li::before{content:'—';color:var(--teal-mid);flex-shrink:0;}
 
 /* ABOUT */
-.about{background:var(--teal);padding:7rem 9vw;display:grid;grid-template-columns:1fr 1.5fr;gap:5vw;align-items:start;}
+.about{background:var(--teal);padding:7rem 9vw;display:grid;grid-template-columns:auto 1fr 1.5fr;gap:4vw;align-items:start;}
 .about-name{font-family:var(--serif);font-size:36px;font-weight:400;color:#fff;margin-bottom:0.3rem;}
 .about-role{font-size:11px;font-weight:400;letter-spacing:0.14em;text-transform:uppercase;color:rgba(168,216,224,0.65);margin-bottom:1.5rem;}
 .about-divider{width:36px;height:1px;background:var(--gold);margin-bottom:1.8rem;}
@@ -95,13 +95,38 @@ footer{background:#111;padding:2rem 9vw;display:flex;align-items:center;justify-
 .form-btn:hover{background:var(--teal-mid);}
 .form-note{font-size:12px;font-weight:300;color:var(--ink-light);margin-top:0.2rem;}
 
+/* PHOTO */
+.about-photo {
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  filter: grayscale(15%);
+}
+
+/* OFFER STATEMENT */
+.offer-statement {
+  font-family: var(--serif);
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.55;
+  color: #fff;
+  border-left: 2px solid var(--gold);
+  padding-left: 1.4rem;
+  margin: 1.8rem 0 1.3rem;
+}
+
 /* RESPONSIVE */
 @media(max-width:800px){
   .hero{grid-template-columns:1fr;min-height:auto;}
   .hero-l{padding:5rem 7vw 3.5rem;}
   .hero-r{padding:3.5rem 7vw 5rem;}
   .what{grid-template-columns:1fr;gap:3rem;padding:5rem 7vw;}
-  .about{grid-template-columns:1fr;gap:2.5rem;padding:5rem 7vw;}
+  .about{grid-template-columns:1fr;gap:2rem;padding:5rem 7vw;}
+  .about-photo{max-width:200px;aspect-ratio:1/1;}
   .cta{grid-template-columns:1fr;gap:2.5rem;padding:5rem 7vw;}
   .form-row{grid-template-columns:1fr;}
   footer{flex-direction:column;gap:0.7rem;text-align:center;}
@@ -170,6 +195,7 @@ footer{background:#111;padding:2rem 9vw;display:flex;align-items:center;justify-
 </section>
 
 <section class="about reveal" id="about">
+  <img class="about-photo" src="photo.jpeg" alt="Jaya Iyer">
   <div>
     <h2 class="about-name">Jaya Iyer</h2>
     <p class="about-role">Performance Coach</p>
@@ -185,7 +211,7 @@ footer{background:#111;padding:2rem 9vw;display:flex;align-items:center;justify-
     <p>I'm a senior technology leader at Amazon, a poet, an entrepreneur, and a mom. I love to travel, and I enjoy dancing and standup comedy.</p>
     <p>I know what it is to hold a lot simultaneously — and to have spent years figuring out why performing well on the outside didn't always feel the way it was supposed to on the inside.</p>
     <p>That's what led me to this work. The inner work that produces lasting change isn't a soft add-on to high performance. It's the missing variable.</p>
-    <p><strong>I work with high-performing men who are excellent at their careers and ready to bring that same focus to their relationships.</strong></p>
+    <p class="offer-statement">I work with high-performing men who are excellent at their careers and ready to bring that same focus to their relationships.</p>
     <p>If something on this page stopped you, send me an email. I'll write back personally.</p>
   </div>
 </section>
